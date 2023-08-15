@@ -1,10 +1,10 @@
 import Layout from "./components/Layout"
+import Notes from "./components/Notes"
 function App() {
   return (
     <div>
       <Layout>
-        <p>test</p>
-        <p>test</p>
+        <Notes />
       </Layout>
     </div>
   )
