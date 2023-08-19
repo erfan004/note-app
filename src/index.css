@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+    .inp-notes {
+        @apply text-center  text-xl bg-zinc-800 outline-none text-gray-400 md:rounded-xl p-1 capitalize
+    }
+}
