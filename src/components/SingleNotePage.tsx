@@ -30,12 +30,11 @@ function SingleNotePage() {
 
   function editFormHandler(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault()
-    axios.put(`http://localhost:3000/Notes/${noteId}` , {
-      title , 
-      body 
+    axios.put(`http://localhost:3000/Notes/${noteId}`, {
+      title : title.trim() != '' ? title : singleNote[0]?.title , 
+      body : body.trim() != '' ? body : singleNote[0]?.body
     })
-    .then((res)=>{
-      console.log(res);
+    .then(()=>{
       navigate('/')
     })
   }
@@ -56,14 +55,14 @@ function SingleNotePage() {
                 autoFocus
                 type="text"
                 placeholder="title"
-                value={title}
+                value={singleNote[0]?.title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="inp-notes my-4"
               />
               <textarea
                 rows={3}
                 placeholder="body"
-                value={body}
+                value={singleNote[0]?.body}
                 onChange={(e) => setBody(e.target.value)}
                 className="inp-notes"
               ></textarea>
