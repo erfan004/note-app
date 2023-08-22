@@ -9,10 +9,10 @@ import NoteProps from "../types/NotePropTypes";
 function SingleNotePage() {
   const { noteId } = useParams();
   const navigate = useNavigate()
-  const [notes, setNotes] = useState([]);
-  const [editStatus, setEditStatus] = useState(false);
-  const [body , setBody] = useState('')
-  const [title , setTitle] = useState('')
+  const [notes, setNotes] = useState<NoteProps[]>([]);
+  const [editStatus, setEditStatus] = useState<boolean>(false);
+  const [body , setBody] = useState<string>('')
+  const [title , setTitle] = useState<string>('')
 
   useEffect(() => {
     axios.get("http://localhost:3000/Notes").then((res: AxiosResponse) => {
